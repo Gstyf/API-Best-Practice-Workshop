@@ -1,0 +1,2 @@
+F:\Work\Programming\API Best Practice\API Best Practice Workshop\x64\Debug\API Best Practice Workshop.exe.lastcodeanalysissucceeded
+F:\Work\Programming\API Best Practice\API Best Practice Workshop\API Best.783fcafb\x64\Debug\NativeCodeAnalysis.read.1.tlog
