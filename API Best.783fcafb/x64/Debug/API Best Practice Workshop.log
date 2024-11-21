@@ -1,3 +1,4 @@
 ﻿  main.cpp
-  API Best Practice Workshop.vcxproj -> F:\Work\Programming\API Best Practice\API Best Practice Workshop\x64\Debug\API Best Practice Workshop.exe
-F:\Work\Programming\API Best Practice\API Best Practice Workshop\main.cpp(58): warning C26439: This kind of function should not throw. Declare it 'noexcept' (f.6).
+  LINK : D:\Documents\Skoldokument\[Universitet]\API Design & Best Practice\API-Best-Practice-Workshop\x64\Debug\API Best Practice Workshop.exe not found or not built by the last incremental link; performing full link
+  API Best Practice Workshop.vcxproj -> D:\Documents\Skoldokument\[Universitet]\API Design & Best Practice\API-Best-Practice-Workshop\x64\Debug\API Best Practice Workshop.exe
+D:\Documents\Skoldokument\[Universitet]\API Design & Best Practice\API-Best-Practice-Workshop\main.cpp(59): warning C26439: This kind of function should not throw. Declare it 'noexcept' (f.6).
