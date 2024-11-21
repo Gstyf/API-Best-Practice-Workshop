@@ -1,2 +1,3 @@
 ﻿  main.cpp
   API Best Practice Workshop.vcxproj -> F:\Work\Programming\API Best Practice\API Best Practice Workshop\x64\Debug\API Best Practice Workshop.exe
+F:\Work\Programming\API Best Practice\API Best Practice Workshop\main.cpp(58): warning C26439: This kind of function should not throw. Declare it 'noexcept' (f.6).

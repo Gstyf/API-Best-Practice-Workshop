@@ -3,7 +3,37 @@
   "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
   "runs": [
     {
-      "results": [],
+      "results": [
+        {
+          "ruleId": "C26439",
+          "message": {
+            "text": "This kind of function should not throw. Declare it 'noexcept' (f.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///f:/work/programming/api best practice/api best practice workshop/main.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///F:/Work/Programming/API Best Practice/API Best Practice Workshop/main.cpp"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 7
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Vec::=",
+                  "decoratedName": "??4Vec@@QEAAAEAV0@$$QEAV0@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "tool": {
         "driver": {
           "name": "PREfast",
@@ -23,10 +53,11 @@
             "uri": "file:///f:/work/programming/api best practice/api best practice workshop/main.cpp"
           },
           "roles": [
-            "analysisTarget"
+            "analysisTarget",
+            "resultFile"
           ],
           "hashes": {
-            "sha-256": "1a01c3e049bf3ef7807274e2fe14b14ac9214aff0401fca9e7a300c8ba61f3fb"
+            "sha-256": "ba19071d7746b4510071ae90b0ea4ab41b947d74d48cf8002c00452528f68ac9"
           }
         }
       ]

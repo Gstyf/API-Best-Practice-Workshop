@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <print>
+#include <numeric>
 
 //Rule of Six
 /*
@@ -14,62 +15,86 @@ also a Swap pattern (six and a half?)
 */
 
 class Vec {
+private:
+	size_t size_ = 0;
 public:
-	Vec() //default constructor
+	int* data_ = nullptr;
+
+	Vec() noexcept {} //default constructor
+
+	explicit Vec(size_t count) noexcept //override constructor
 	{
-		ptr_ = nullptr;
-		size_ = 0;
-		std::println("default constructor called");
+		data_ = new int[count];
+		size_ = count;
+		std::iota(data_, data_ + size_, 0);
 	};
 
-	Vec(const Vec& that) //copy constructor
+	Vec(const Vec& that) : //copy constructor
+		size_(that.size_), 
+		data_(new int[size_]) // <-- if new int[size_] isn't called, the vec is put in the wrong address causing issues with delete[]
 	{
-		ptr_ = new int[that.size_];
-		size_ = that.size_;
-		std::copy(that.ptr_, that.ptr_ + size_, ptr_);
+		std::copy(begin(), end(), data_);
 		std::println("copy constructor called");
 	}
 
-	Vec(Vec&& that) noexcept //move constructor
+	Vec(Vec&& that) noexcept : //move constructor
+		data_(that.data_) 
 	{
-		ptr_ = that.ptr_;
-		size_ = that.size_;
-		that.ptr_ = nullptr;
-		that.size_ = 0;
+		that.data_ = nullptr;
 		std::println("move constructor called");
 	}
 
-	Vec& operator=(Vec that) //copy assignment operator
+	Vec& operator=(const Vec& other) //copy assignment
 	{
-		swap(*this, that); //swap function
+		if (&other != this)
+		{
+			Vec copy(other);
+			std::swap(data_, copy.data_);
+		}
+		std::println("copy assign called");
+		return *this;
+	}
+
+	Vec& operator=(Vec&& other) //move assignment
+	{
+		if (&other != this)
+		{
+			std::swap(data_, other.data_);
+			std::swap(size_, other.size_);
+		}
+		std::println("move assign called");
 		return *this;
 	}
 	
-	~Vec() //destructor
+	int* begin() const noexcept //retrieve ptr of first position
 	{
-		delete[] ptr_;
-		std::println("desctuctor called");
-	};
-
-	friend void swap(Vec& lhs, Vec& rhs) noexcept //copy assign?
-	{
-		using std::swap;
-		swap(lhs.ptr_, rhs.ptr_);
-		std::println("copy assign called - more of a swap, actually");
+		return data_;
 	}
 
-private:
-	int* ptr_ = nullptr;
-	size_t size_ = 0;
+	int* end() const noexcept //retrieve ptr of last position
+	{
+		return data_ + size_;
+	}
+
+	~Vec() noexcept //destructor
+	{
+		delete[] data_;
+		std::println("destructor called");
+	};
+
 };
 
 int main()
 {
-	Vec aVec; //declare an empty container
-	Vec bVec = aVec; //copy constructor called
-	
-	bVec = aVec; //copy assignment
+	auto aVec = Vec(3); //calls default constructor
+	auto bVec = Vec(7); //calls default constructor
+	aVec = bVec; //calls copy assignment which calls copy constructor
 
-	std::print("test");
+	aVec = std::move(bVec); //calls move assignment
+	Vec c{ std::move(aVec) }; //calls move constructor
+	if (aVec.data_ == nullptr)
+	{
+		std::println("data has been deleted!");
+	}
 	return 0;
 }
