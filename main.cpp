@@ -1,6 +1,6 @@
 #include <algorithm>
-#include <print>
 #include <numeric>
+#include <print>
 
 //Rule of Six
 /*
@@ -35,14 +35,12 @@ public:
 		data_(new int[size_]) // <-- if new int[size_] isn't called, the vec is put in the wrong address causing issues with delete[]
 	{
 		std::copy(begin(), end(), data_);
-		std::println("copy constructor called");
 	}
 
 	Vec(Vec&& that) noexcept : //move constructor
 		data_(that.data_) 
 	{
 		that.data_ = nullptr;
-		std::println("move constructor called");
 	}
 
 	Vec& operator=(const Vec& other) //copy assignment
@@ -52,7 +50,6 @@ public:
 			Vec copy(other);
 			std::swap(data_, copy.data_);
 		}
-		std::println("copy assign called");
 		return *this;
 	}
 
@@ -80,7 +77,6 @@ public:
 	~Vec() noexcept //destructor
 	{
 		delete[] data_;
-		std::println("destructor called");
 	};
 
 };
