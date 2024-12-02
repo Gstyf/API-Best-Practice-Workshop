@@ -20,13 +20,14 @@ private:
 public:
 	int* data_ = nullptr;
 
-	Vec() noexcept {} //default constructor
+	Vec() noexcept { std::println("default constructor called."); } //default constructor
 
 	explicit Vec(size_t count) noexcept //override constructor
 	{
 		data_ = new int[count];
 		size_ = count;
 		std::iota(data_, data_ + size_, 0);
+		std::println("Override constructor called.");
 	};
 
 	Vec(const Vec& that) : //copy constructor

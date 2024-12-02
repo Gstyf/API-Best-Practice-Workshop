@@ -2,16 +2,16 @@
 <DEFECTS>
   <DEFECT>
     <SFA>
-      <FILEPATH>F:\Work\Programming\API Best Practice\API Best Practice Workshop\</FILEPATH>
+      <FILEPATH>D:\Documents\Skoldokument\[Universitet]\API Design &amp; Best Practice\API-Best-Practice-Workshop\</FILEPATH>
       <FILENAME>main.cpp</FILENAME>
-      <LINE>58</LINE>
+      <LINE>59</LINE>
       <COLUMN>6</COLUMN>
     </SFA>
     <DEFECTCODE>26439</DEFECTCODE>
     <DESCRIPTION>This kind of function should not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
     <FUNCTION>Vec::=</FUNCTION>
     <DECORATED>??4Vec@@QEAAAEAV0@$$QEAV0@@Z</DECORATED>
-    <FUNCLINE>58</FUNCLINE>
+    <FUNCLINE>59</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
 </DEFECTS>

@@ -10,16 +10,16 @@
             "text": "This kind of function should not throw. Declare it 'noexcept' (f.6)."
           },
           "analysisTarget": {
-            "uri": "file:///f:/work/programming/api best practice/api best practice workshop/main.cpp"
+            "uri": "file:///d:/documents/skoldokument/[universitet]/api design & best practice/api-best-practice-workshop/main.cpp"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "file:///F:/Work/Programming/API Best Practice/API Best Practice Workshop/main.cpp"
+                  "uri": "file:///D:/Documents/Skoldokument/[Universitet]/API Design & Best Practice/API-Best-Practice-Workshop/main.cpp"
                 },
                 "region": {
-                  "startLine": 58,
+                  "startLine": 59,
                   "startColumn": 7
                 }
               },
@@ -50,14 +50,14 @@
       "artifacts": [
         {
           "location": {
-            "uri": "file:///f:/work/programming/api best practice/api best practice workshop/main.cpp"
+            "uri": "file:///d:/documents/skoldokument/[universitet]/api design & best practice/api-best-practice-workshop/main.cpp"
           },
           "roles": [
             "analysisTarget",
             "resultFile"
           ],
           "hashes": {
-            "sha-256": "ba19071d7746b4510071ae90b0ea4ab41b947d74d48cf8002c00452528f68ac9"
+            "sha-256": "fc0f791c4296189e244ec9aece31d231c627687a6bf8ced22bd2c53894d7ccc9"
           }
         }
       ]
